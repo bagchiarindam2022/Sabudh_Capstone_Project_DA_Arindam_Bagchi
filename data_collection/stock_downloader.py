@@ -4,19 +4,11 @@ import os
 from datetime import datetime
 import sys
 
-# Fix: __file__ is not defined in Colab notebooks.
-# Using os.getcwd() to get the current directory and navigating up one level
-# to typically reach the project root where 'config' might reside.
-# sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '..')))
 
-# --- FIX: ModuleNotFoundError for 'config' --- #
-# Define configuration variables directly as 'config' module was not found.
-# You can uncomment the sys.path.append line and ensure your project structure
-# has a 'config' directory with a 'config.py' file if you prefer external config.
 STOCK_DATA_DIR = 'stock_data'
 DEFAULT_TICKERS = ['MSFT', 'AAPL', 'GOOGL', 'AMZN', 'TSLA']
 DEFAULT_START_DATE = '2020-01-01'
-# --- END FIX --- #
+
 
 
 class StockDownloader:
