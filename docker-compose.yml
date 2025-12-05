@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  spark-app:
+    build: .
+    container_name: stock-analysis-app
+    volumes:
+      - .:/workspace
+      - spark-logs:/tmp/spark-logs
+    ports:
+      - "8888:8888"  # Jupyter
+      - "8501:8501"  # Streamlit
+      - "4040:4040"  # Spark UI
+    environment:
+      - SPARK_LOCAL_IP=127.0.0.1
+      - PYTHONUNBUFFERED=1
+    command: python main.py
+
+volumes:
+  spark-logs:
