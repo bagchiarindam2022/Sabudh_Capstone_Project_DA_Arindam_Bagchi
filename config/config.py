@@ -9,6 +9,7 @@ STUDENT TASK:
 """
 
 import os
+PROCESSED_PARQUET = "data/processed_stocks.parquet"
 
 # ============================================================================
 # PROJECT PATHS
